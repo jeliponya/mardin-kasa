@@ -537,7 +537,7 @@
   }
 
   function mailGonder() {
-   
+    setTimeout(() => {
     const tarihRaw = document.getElementById('tarih').value;
     const tarih = tarihFormatla(tarihRaw);
 
@@ -581,7 +581,8 @@
     );
 
     window.location.href = 'mailto:ertektavukculuk@hotmail.com?subject=' + konu + '&body=' + govde;
-  }
+  }, 800);
+}
 
   function yazdir() { window.print(); }
 
