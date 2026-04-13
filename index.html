@@ -99,7 +99,6 @@
   .panel-header.giden { background: rgba(224,92,58,0.12); color: var(--accent2); border-bottom: 1px solid rgba(224,92,58,0.25); }
 
   .entry-list { padding: 12px 16px; display: flex; flex-direction: column; gap: 8px; }
-
   .entry-row { display: flex; align-items: center; gap: 8px; }
 
   .entry-label {
@@ -126,7 +125,6 @@
   }
   .entry-row input[type="number"]:focus { border-color: var(--accent); }
   .entry-row input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
-
   .entry-row .currency { font-size: 0.8rem; color: var(--muted); width: 16px; text-align: right; flex-shrink: 0; }
 
   .diger-row { display: flex; align-items: center; gap: 8px; }
@@ -146,7 +144,6 @@
   }
   .diger-row input[type="text"]:focus { border-color: var(--accent); color: var(--text); }
   .diger-row input[type="text"]::placeholder { color: #555; }
-
   .diger-row input[type="number"] {
     flex: 1;
     background: var(--input-bg);
@@ -162,7 +159,6 @@
   .diger-row input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
   .diger-row input[type="number"]:focus { border-color: var(--accent); }
 
-  /* Kalem Ekle — her zaman belirgin */
   .add-btn {
     background: #1e3a1e;
     border: 1.5px solid #4a9e4a;
@@ -203,7 +199,6 @@
     flex-wrap: wrap;
     gap: 20px;
   }
-
   .result-item { text-align: center; }
   .result-item .rlabel { font-size: 0.7rem; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; margin-bottom: 4px; }
   .result-item .rval { font-family: 'IBM Plex Mono', monospace; font-size: 1.35rem; font-weight: 600; }
@@ -253,10 +248,7 @@
     cursor: pointer;
     text-transform: uppercase;
     font-weight: 700;
-    border: none;
   }
-
-  /* Temizle — her zaman belirgin kırmızı */
   .btn-danger {
     background: #3a1010;
     border: 1.5px solid var(--accent2);
@@ -264,7 +256,21 @@
   }
   .btn-danger:hover { background: var(--accent2); color: #fff; }
 
-  /* Yazdır — her zaman belirgin sarı */
+  .btn-mail {
+    background: #0e2233;
+    border: 1.5px solid #4a9ec8;
+    color: #7dcfee;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    padding: 9px 22px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .btn-mail:hover { background: #163348; border-color: #7dcfee; }
+
   .btn-primary {
     background: var(--accent);
     color: #111;
@@ -284,10 +290,77 @@
   }
   .delete-btn:hover { color: var(--accent2); }
 
+  /* ========== PRINT ========== */
   @media print {
-    body { background: #fff; color: #000; padding: 12px; }
-    .panel { border: 1px solid #ccc; }
-    .btn, .add-btn, .delete-btn { display: none; }
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    body {
+      background: #ffffff !important;
+      color: #111111 !important;
+      padding: 16px !important;
+    }
+
+    header { border-bottom: 2px solid #b8902a !important; margin-bottom: 20px !important; }
+    header h1 { color: #b8902a !important; font-size: 2rem !important; }
+    header h1 span { color: #333 !important; }
+
+    .date-row input[type="date"] {
+      background: #f5f5f5 !important;
+      border: 1px solid #bbb !important;
+      color: #111 !important;
+    }
+
+    .panel { background: #ffffff !important; border: 1.5px solid #bbb !important; break-inside: avoid; }
+
+    .panel-header.gelen {
+      background: #e0f5ec !important;
+      color: #1e6b45 !important;
+      border-bottom: 1px solid #a5d6bc !important;
+    }
+    .panel-header.giden {
+      background: #fdecea !important;
+      color: #b03020 !important;
+      border-bottom: 1px solid #f0b3ad !important;
+    }
+
+    .entry-label { color: #444 !important; }
+
+    .entry-row input[type="number"],
+    .diger-row input[type="number"],
+    .diger-row input[type="text"] {
+      background: #f4f4f4 !important;
+      border: 1px solid #ccc !important;
+      color: #111111 !important;
+      font-weight: 700 !important;
+    }
+
+    .entry-row .currency,
+    .diger-row span { color: #444 !important; }
+
+    .panel-total { background: #f0f0f0 !important; border-top: 1.5px solid #bbb !important; }
+    .panel-total .label { color: #444 !important; }
+    .panel-total .val.gelen { color: #1e6b45 !important; }
+    .panel-total .val.giden { color: #b03020 !important; }
+
+    .result-card { background: #f7f7f7 !important; border: 1.5px solid #bbb !important; }
+    .result-item .rlabel { color: #444 !important; }
+    .rval.green { color: #1e6b45 !important; }
+    .rval.red { color: #b03020 !important; }
+    .rval.gold { color: #b8902a !important; }
+
+    .note-row label { color: #444 !important; }
+    .note-row textarea {
+      background: #f4f4f4 !important;
+      border: 1px solid #ccc !important;
+      color: #111111 !important;
+    }
+
+    .divider { background: #bbb !important; }
+
+    .btn, .btn-mail, .add-btn, .delete-btn, .action-row { display: none !important; }
   }
 </style>
 </head>
@@ -302,7 +375,6 @@
 </header>
 
 <div class="grid">
-  <!-- GELEN -->
   <div class="panel">
     <div class="panel-header gelen">▲ GELEN PARA</div>
     <div class="entry-list">
@@ -330,7 +402,6 @@
     </div>
   </div>
 
-  <!-- GİDEN -->
   <div class="panel">
     <div class="panel-header giden">▼ GİDEN PARA</div>
     <div class="entry-list">
@@ -359,7 +430,6 @@
   </div>
 </div>
 
-<!-- Sonuç -->
 <div class="result-card">
   <div class="result-item">
     <div class="rlabel">Toplam Gelen</div>
@@ -384,6 +454,7 @@
 
 <div class="action-row">
   <button class="btn btn-danger" onclick="temizle()">Temizle</button>
+  <button class="btn-mail" onclick="mailGonder()">✉ Mail Gönder</button>
   <button class="btn btn-primary" onclick="yazdir()">Yazdır / PDF</button>
 </div>
 
@@ -392,28 +463,43 @@
   const today = new Date();
   tarihInput.value = today.toISOString().split('T')[0];
 
-  let gelenDigerCount = 0;
-  let gidenDigerCount = 0;
+  let gelenDigerCount = 0, gidenDigerCount = 0;
+  let _gelen = 0, _giden = 0, _kalan = 0;
 
   function fmt(n) {
     return '₺ ' + n.toLocaleString('tr-TR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   }
+  function fmtSade(n) {
+    return n.toLocaleString('tr-TR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+
+  const notEl = document.getElementById('aciklama');
+  let kullaniciNot = false;
+
+  notEl.addEventListener('input', function() {
+    kullaniciNot = true;
+  });
 
   function hesapla() {
-    let gelen = 0;
-    document.querySelectorAll('.gelen-input').forEach(i => { gelen += parseFloat(i.value) || 0; });
-    let giden = 0;
-    document.querySelectorAll('.giden-input').forEach(i => { giden += parseFloat(i.value) || 0; });
-    const kalan = gelen - giden;
+    _gelen = 0;
+    document.querySelectorAll('.gelen-input').forEach(i => { _gelen += parseFloat(i.value) || 0; });
+    _giden = 0;
+    document.querySelectorAll('.giden-input').forEach(i => { _giden += parseFloat(i.value) || 0; });
+    _kalan = _gelen - _giden;
 
-    document.getElementById('toplam-gelen').textContent = fmt(gelen);
-    document.getElementById('toplam-giden').textContent = fmt(giden);
-    document.getElementById('res-gelen').textContent = fmt(gelen);
-    document.getElementById('res-giden').textContent = fmt(giden);
+    document.getElementById('toplam-gelen').textContent = fmt(_gelen);
+    document.getElementById('toplam-giden').textContent = fmt(_giden);
+    document.getElementById('res-gelen').textContent = fmt(_gelen);
+    document.getElementById('res-giden').textContent = fmt(_giden);
 
     const resKalan = document.getElementById('res-kalan');
-    resKalan.textContent = fmt(kalan);
-    resKalan.className = 'rval ' + (kalan >= 0 ? 'gold' : 'red');
+    resKalan.textContent = fmt(_kalan);
+    resKalan.className = 'rval ' + (_kalan >= 0 ? 'gold' : 'red');
+
+    // Not boşsa veya kullanıcı elle yazmadıysa otomatik güncelle
+    if (!kullaniciNot) {
+      notEl.value = 'Şuan kasada ' + fmtSade(_kalan) + ' TL var.';
+    }
   }
 
   document.querySelectorAll('input').forEach(el => el.addEventListener('input', hesapla));
@@ -442,11 +528,57 @@
   function temizle() {
     if (!confirm('Tüm girişler silinecek. Emin misiniz?')) return;
     document.querySelectorAll('input[type="number"]').forEach(i => i.value = '');
-    document.getElementById('aciklama').value = '';
+    notEl.value = '';
+    kullaniciNot = false;
     document.getElementById('gelen-diger-rows').innerHTML = '';
     document.getElementById('giden-diger-rows').innerHTML = '';
     gelenDigerCount = 0; gidenDigerCount = 0;
     hesapla();
+  }
+
+  function mailGonder() {
+    const tarih = document.getElementById('tarih').value;
+
+    const gelenKalemler = [];
+    document.querySelectorAll('.gelen-input').forEach(inp => {
+      const val = parseFloat(inp.value) || 0;
+      if (!val) return;
+      const row = inp.closest('.entry-row, .diger-row');
+      const labelEl = row && row.querySelector('.entry-label');
+      const textEl = row && row.querySelector('input[type="text"]');
+      const label = labelEl ? labelEl.textContent.trim() : (textEl && textEl.value ? textEl.value : 'Diğer');
+      gelenKalemler.push('  ' + label + ': ' + fmtSade(val) + ' TL');
+    });
+
+    const gidenKalemler = [];
+    document.querySelectorAll('.giden-input').forEach(inp => {
+      const val = parseFloat(inp.value) || 0;
+      if (!val) return;
+      const row = inp.closest('.entry-row, .diger-row');
+      const labelEl = row && row.querySelector('.entry-label');
+      const textEl = row && row.querySelector('input[type="text"]');
+      const label = labelEl ? labelEl.textContent.trim() : (textEl && textEl.value ? textEl.value : 'Diğer');
+      gidenKalemler.push('  ' + label + ': ' + fmtSade(val) + ' TL');
+    });
+
+    const not = notEl.value.trim();
+    const konu = encodeURIComponent('Mardin Kasa Defteri — ' + tarih);
+    const govde = encodeURIComponent(
+      'MARDİN BÖLGE KASA DEFTERİ\n' +
+      'Tarih: ' + tarih + '\n' +
+      '─────────────────────────\n\n' +
+      '▲ GELEN PARA\n' +
+      (gelenKalemler.length ? gelenKalemler.join('\n') : '  —') + '\n' +
+      'TOPLAM GELİR: ' + fmtSade(_gelen) + ' TL\n\n' +
+      '▼ GİDEN PARA\n' +
+      (gidenKalemler.length ? gidenKalemler.join('\n') : '  —') + '\n' +
+      'TOPLAM GİDER: ' + fmtSade(_giden) + ' TL\n\n' +
+      '─────────────────────────\n' +
+      'KASADAKİ PARA: ' + fmtSade(_kalan) + ' TL\n' +
+      (not ? '\nNOT: ' + not : '')
+    );
+
+    window.location.href = 'mailto:?subject=' + konu + '&body=' + govde;
   }
 
   function yazdir() { window.print(); }
