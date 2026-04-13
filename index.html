@@ -184,8 +184,13 @@
   }
   .btn-mail:hover { background: #163348; border-color: #7dcfee; }
 
-  .btn-primary { background: var(--accent); color: #111; border: 1.5px solid var(--accent); }
-  .btn-primary:hover { background: #f5c84e; border-color: #f5c84e; }
+  .btn-pdf {
+    background: #1a2a0e; border: 1.5px solid #6abf3a; color: #a0e060;
+    font-family: 'IBM Plex Sans', sans-serif; font-size: 0.85rem;
+    letter-spacing: 1.5px; padding: 9px 22px; border-radius: 4px;
+    cursor: pointer; text-transform: uppercase; font-weight: 700;
+  }
+  .btn-pdf:hover { background: #243d14; border-color: #a0e060; }
 
   .delete-btn {
     background: none; border: none; color: #666; cursor: pointer;
@@ -329,12 +334,11 @@
 <div class="action-row">
   <button class="btn btn-danger" onclick="temizle()">Temizle</button>
   <button class="btn-mail" onclick="mailGonder()">✉ Mail Gönder</button>
-  <button class="btn btn-primary" onclick="yazdir()">Yazdır / PDF</button>
+  <button class="btn-pdf" onclick="yazdir()">⬇ PDF Kaydet</button>
 </div>
 
 <div class="mail-info" id="mail-info">
-  📎 PDF <strong>İndirilenler</strong> klasörüne kaydedildi.<br>
-  Outlook açıldığında PDF'i eke ekleyip gönder.<br>
+  ✉ Mail uygulaması açıldı. Göndermeye hazır.<br>
   <span style="color:#aaa;font-size:.78rem;">Alıcı: ertektavukculuk@hotmail.com</span>
 </div>
 
@@ -446,32 +450,26 @@
     const gelenler = kalemListesi('gelen-input');
     const gidenler = kalemListesi('giden-input');
 
-    // 1) PDF indir
-    window.print();
+    const konu = encodeURIComponent('Mardin Kasa Defteri — ' + tarihGG);
+    const govde = encodeURIComponent(
+      'MARDİN BÖLGE KASA DEFTERİ\n' +
+      'Tarih: ' + tarihGG + '\n' +
+      '─────────────────────────────\n\n' +
+      '▲ GELEN PARA\n' +
+      (gelenler.length ? gelenler.join('\n') : '  —') + '\n' +
+      'TOPLAM GELİR: ' + fmtSade(_gelen) + ' TL\n\n' +
+      '▼ GİDEN PARA\n' +
+      (gidenler.length ? gidenler.join('\n') : '  —') + '\n' +
+      'TOPLAM GİDER: ' + fmtSade(_giden) + ' TL\n\n' +
+      '─────────────────────────────\n' +
+      'KASADAKİ PARA: ' + fmtSade(_kalan) + ' TL\n' +
+      (not ? '\nNOT: ' + not : '')
+    );
 
-    // 2) Kısa gecikme sonra mail aç (print dialog kapanmadan açılmasın)
-    setTimeout(function () {
-      const konu = encodeURIComponent('Mardin Kasa Defteri — ' + tarihGG);
-      const govde = encodeURIComponent(
-        'MARDİN BÖLGE KASA DEFTERİ\n' +
-        'Tarih: ' + tarihGG + '\n' +
-        '─────────────────────────────\n\n' +
-        '▲ GELEN PARA\n' +
-        (gelenler.length ? gelenler.join('\n') : '  —') + '\n' +
-        'TOPLAM GELİR: ' + fmtSade(_gelen) + ' TL\n\n' +
-        '▼ GİDEN PARA\n' +
-        (gidenler.length ? gidenler.join('\n') : '  —') + '\n' +
-        'TOPLAM GİDER: ' + fmtSade(_giden) + ' TL\n\n' +
-        '─────────────────────────────\n' +
-        'KASADAKİ PARA: ' + fmtSade(_kalan) + ' TL\n' +
-        (not ? '\nNOT: ' + not : '')
-      );
+    window.location.href = 'mailto:' + MAIL_ALICI +
+      '?subject=' + konu + '&body=' + govde;
 
-      window.location.href = 'mailto:' + MAIL_ALICI +
-        '?subject=' + konu + '&body=' + govde;
-
-      document.getElementById('mail-info').classList.add('visible');
-    }, 500);
+    document.getElementById('mail-info').classList.add('visible');
   }
 
   function yazdir() { window.print(); }
