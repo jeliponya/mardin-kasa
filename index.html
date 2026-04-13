@@ -79,21 +79,14 @@
   }
   @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
 
-  .panel {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
-  }
+  .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
 
   .panel-header {
     padding: 12px 16px;
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.1rem;
     letter-spacing: 3px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    display: flex; align-items: center; gap: 8px;
   }
   .panel-header.gelen { background: rgba(76,175,130,0.12); color: var(--green); border-bottom: 1px solid rgba(76,175,130,0.25); }
   .panel-header.giden { background: rgba(224,92,58,0.12); color: var(--accent2); border-bottom: 1px solid rgba(224,92,58,0.25); }
@@ -102,26 +95,15 @@
   .entry-row { display: flex; align-items: center; gap: 8px; }
 
   .entry-label {
-    width: 90px;
-    font-size: 0.75rem;
-    letter-spacing: 1px;
-    color: var(--muted);
-    text-transform: uppercase;
-    flex-shrink: 0;
+    width: 90px; font-size: 0.75rem; letter-spacing: 1px;
+    color: var(--muted); text-transform: uppercase; flex-shrink: 0;
   }
 
   .entry-row input[type="number"] {
-    flex: 1;
-    background: var(--input-bg);
-    border: 1px solid var(--border);
-    color: var(--text);
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.95rem;
-    padding: 7px 10px;
-    border-radius: 4px;
-    outline: none;
-    text-align: right;
-    transition: border-color 0.15s;
+    flex: 1; background: var(--input-bg); border: 1px solid var(--border);
+    color: var(--text); font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.95rem; padding: 7px 10px; border-radius: 4px;
+    outline: none; text-align: right; transition: border-color 0.15s;
   }
   .entry-row input[type="number"]:focus { border-color: var(--accent); }
   .entry-row input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
@@ -129,59 +111,32 @@
 
   .diger-row { display: flex; align-items: center; gap: 8px; }
   .diger-row input[type="text"] {
-    width: 90px;
-    background: var(--input-bg);
-    border: 1px solid var(--border);
-    color: var(--muted);
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 0.75rem;
-    padding: 7px 8px;
-    border-radius: 4px;
-    outline: none;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    flex-shrink: 0;
+    width: 90px; background: var(--input-bg); border: 1px solid var(--border);
+    color: var(--muted); font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.75rem; padding: 7px 8px; border-radius: 4px; outline: none;
+    text-transform: uppercase; letter-spacing: 1px; flex-shrink: 0;
   }
   .diger-row input[type="text"]:focus { border-color: var(--accent); color: var(--text); }
   .diger-row input[type="text"]::placeholder { color: #555; }
   .diger-row input[type="number"] {
-    flex: 1;
-    background: var(--input-bg);
-    border: 1px solid var(--border);
-    color: var(--text);
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.95rem;
-    padding: 7px 10px;
-    border-radius: 4px;
-    outline: none;
-    text-align: right;
+    flex: 1; background: var(--input-bg); border: 1px solid var(--border);
+    color: var(--text); font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.95rem; padding: 7px 10px; border-radius: 4px; outline: none; text-align: right;
   }
   .diger-row input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
   .diger-row input[type="number"]:focus { border-color: var(--accent); }
 
   .add-btn {
-    background: #1e3a1e;
-    border: 1.5px solid #4a9e4a;
-    color: #7ddf7d;
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 0.82rem;
-    font-weight: 700;
-    padding: 7px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 4px;
-    letter-spacing: 1.5px;
-    width: 100%;
-    text-transform: uppercase;
+    background: #1e3a1e; border: 1.5px solid #4a9e4a; color: #7ddf7d;
+    font-family: 'IBM Plex Sans', sans-serif; font-size: 0.82rem; font-weight: 700;
+    padding: 7px 12px; border-radius: 4px; cursor: pointer;
+    margin-top: 4px; letter-spacing: 1.5px; width: 100%; text-transform: uppercase;
   }
   .add-btn:hover { background: #274f27; border-color: #7ddf7d; }
 
   .panel-total {
-    border-top: 1px solid var(--border);
-    padding: 10px 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    border-top: 1px solid var(--border); padding: 10px 16px;
+    display: flex; justify-content: space-between; align-items: center;
   }
   .panel-total .label { font-size: 0.75rem; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; }
   .panel-total .val { font-family: 'IBM Plex Mono', monospace; font-size: 1.05rem; font-weight: 600; }
@@ -189,15 +144,9 @@
   .panel-total .val.giden { color: var(--accent2); }
 
   .result-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 20px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+    padding: 20px 24px; display: flex; align-items: center;
+    justify-content: space-between; flex-wrap: wrap; gap: 20px;
   }
   .result-item { text-align: center; }
   .result-item .rlabel { font-size: 0.7rem; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; margin-bottom: 4px; }
@@ -205,169 +154,94 @@
   .rval.green { color: var(--green); }
   .rval.red { color: var(--accent2); }
   .rval.gold { color: var(--accent); }
-
   .divider { width: 1px; height: 40px; background: var(--border); }
 
-  .note-row {
-    margin-top: 16px;
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-  }
+  .note-row { margin-top: 16px; display: flex; gap: 10px; align-items: flex-start; }
   .note-row label { color: var(--muted); font-size: 0.75rem; letter-spacing: 1px; padding-top: 8px; white-space: nowrap; }
   .note-row textarea {
-    flex: 1;
-    background: var(--input-bg);
-    border: 1px solid var(--border);
-    color: var(--text);
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 0.9rem;
-    padding: 8px 12px;
-    border-radius: 4px;
-    resize: vertical;
-    outline: none;
-    min-height: 52px;
-    line-height: 1.5;
+    flex: 1; background: var(--input-bg); border: 1px solid var(--border);
+    color: var(--text); font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.9rem; padding: 8px 12px; border-radius: 4px;
+    resize: vertical; outline: none; min-height: 52px; line-height: 1.5;
   }
   .note-row textarea:focus { border-color: var(--accent); }
 
-  .action-row {
-    display: flex;
-    gap: 10px;
-    margin-top: 16px;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-  }
+  .action-row { display: flex; gap: 10px; margin-top: 16px; justify-content: flex-end; flex-wrap: wrap; }
 
   .btn {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 0.85rem;
-    letter-spacing: 1.5px;
-    padding: 9px 22px;
-    border-radius: 4px;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-weight: 700;
+    font-family: 'IBM Plex Sans', sans-serif; font-size: 0.85rem;
+    letter-spacing: 1.5px; padding: 9px 22px; border-radius: 4px;
+    cursor: pointer; text-transform: uppercase; font-weight: 700;
   }
-  .btn-danger {
-    background: #3a1010;
-    border: 1.5px solid var(--accent2);
-    color: var(--accent2);
-  }
+  .btn-danger { background: #3a1010; border: 1.5px solid var(--accent2); color: var(--accent2); }
   .btn-danger:hover { background: var(--accent2); color: #fff; }
 
   .btn-mail {
-    background: #0e2233;
-    border: 1.5px solid #4a9ec8;
-    color: #7dcfee;
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 0.85rem;
-    letter-spacing: 1.5px;
-    padding: 9px 22px;
-    border-radius: 4px;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-weight: 700;
+    background: #0e2233; border: 1.5px solid #4a9ec8; color: #7dcfee;
+    font-family: 'IBM Plex Sans', sans-serif; font-size: 0.85rem;
+    letter-spacing: 1.5px; padding: 9px 22px; border-radius: 4px;
+    cursor: pointer; text-transform: uppercase; font-weight: 700;
   }
   .btn-mail:hover { background: #163348; border-color: #7dcfee; }
 
-  .btn-primary {
-    background: var(--accent);
-    color: #111;
-    border: 1.5px solid var(--accent);
-  }
+  .btn-primary { background: var(--accent); color: #111; border: 1.5px solid var(--accent); }
   .btn-primary:hover { background: #f5c84e; border-color: #f5c84e; }
 
   .delete-btn {
-    background: none;
-    border: none;
-    color: #666;
-    cursor: pointer;
-    font-size: 1rem;
-    padding: 0 2px;
-    line-height: 1;
-    flex-shrink: 0;
+    background: none; border: none; color: #666; cursor: pointer;
+    font-size: 1rem; padding: 0 2px; line-height: 1; flex-shrink: 0;
   }
   .delete-btn:hover { color: var(--accent2); }
 
+  .mail-info {
+    display: none;
+    margin-top: 10px;
+    background: #0e2233;
+    border: 1px solid #4a9ec8;
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 0.83rem;
+    color: #7dcfee;
+    line-height: 1.7;
+  }
+  .mail-info.visible { display: block; }
+
   /* ========== PRINT ========== */
   @media print {
-    * {
-      -webkit-print-color-adjust: exact !important;
-      print-color-adjust: exact !important;
-    }
-
-    body {
-      background: #ffffff !important;
-      color: #111111 !important;
-      padding: 16px !important;
-    }
-
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    body { background: #ffffff !important; color: #111111 !important; padding: 16px !important; }
     header { border-bottom: 2px solid #b8902a !important; margin-bottom: 20px !important; }
     header h1 { color: #b8902a !important; font-size: 2rem !important; }
     header h1 span { color: #333 !important; }
-
-    .date-row input[type="date"] {
-      background: #f5f5f5 !important;
-      border: 1px solid #bbb !important;
-      color: #111 !important;
-    }
-
+    .date-row input[type="date"] { background: #f5f5f5 !important; border: 1px solid #bbb !important; color: #111 !important; }
     .panel { background: #ffffff !important; border: 1.5px solid #bbb !important; break-inside: avoid; }
-
-    .panel-header.gelen {
-      background: #e0f5ec !important;
-      color: #1e6b45 !important;
-      border-bottom: 1px solid #a5d6bc !important;
-    }
-    .panel-header.giden {
-      background: #fdecea !important;
-      color: #b03020 !important;
-      border-bottom: 1px solid #f0b3ad !important;
-    }
-
+    .panel-header.gelen { background: #e0f5ec !important; color: #1e6b45 !important; border-bottom: 1px solid #a5d6bc !important; }
+    .panel-header.giden { background: #fdecea !important; color: #b03020 !important; border-bottom: 1px solid #f0b3ad !important; }
     .entry-label { color: #444 !important; }
-
     .entry-row input[type="number"],
     .diger-row input[type="number"],
-    .diger-row input[type="text"] {
-      background: #f4f4f4 !important;
-      border: 1px solid #ccc !important;
-      color: #111111 !important;
-      font-weight: 700 !important;
-    }
-
-    .entry-row .currency,
-    .diger-row span { color: #444 !important; }
-
+    .diger-row input[type="text"] { background: #f4f4f4 !important; border: 1px solid #ccc !important; color: #111111 !important; font-weight: 700 !important; }
+    .entry-row .currency, .diger-row span[style] { color: #444 !important; }
     .panel-total { background: #f0f0f0 !important; border-top: 1.5px solid #bbb !important; }
     .panel-total .label { color: #444 !important; }
     .panel-total .val.gelen { color: #1e6b45 !important; }
     .panel-total .val.giden { color: #b03020 !important; }
-
     .result-card { background: #f7f7f7 !important; border: 1.5px solid #bbb !important; }
     .result-item .rlabel { color: #444 !important; }
     .rval.green { color: #1e6b45 !important; }
     .rval.red { color: #b03020 !important; }
     .rval.gold { color: #b8902a !important; }
-
     .note-row label { color: #444 !important; }
-    .note-row textarea {
-      background: #f4f4f4 !important;
-      border: 1px solid #ccc !important;
-      color: #111111 !important;
-    }
-
+    .note-row textarea { background: #f4f4f4 !important; border: 1px solid #ccc !important; color: #111111 !important; }
     .divider { background: #bbb !important; }
-
-    .btn, .btn-mail, .add-btn, .delete-btn, .action-row { display: none !important; }
+    .btn, .btn-mail, .add-btn, .delete-btn, .action-row, .mail-info { display: none !important; }
   }
 </style>
 </head>
 <body>
 
 <header>
-  <h1><span>MARDİN ASPİLİÇ</span>KASA DEFTERİ</h1>
+  <h1><span>MARDİN BÖLGE</span>KASA DEFTERİ</h1>
   <div class="date-row">
     <label>TARİH</label>
     <input type="date" id="tarih">
@@ -458,7 +332,16 @@
   <button class="btn btn-primary" onclick="yazdir()">Yazdır / PDF</button>
 </div>
 
+<div class="mail-info" id="mail-info">
+  📎 PDF <strong>İndirilenler</strong> klasörüne kaydedildi.<br>
+  Outlook açıldığında PDF'i eke ekleyip gönder.<br>
+  <span style="color:#aaa;font-size:.78rem;">Alıcı: ertektavukculuk@hotmail.com</span>
+</div>
+
 <script>
+  const MAIL_ALICI = 'ertektavukculuk@hotmail.com';
+
+  // Bugünü seç
   const tarihInput = document.getElementById('tarih');
   const today = new Date();
   tarihInput.value = today.toISOString().split('T')[0];
@@ -473,12 +356,16 @@
     return n.toLocaleString('tr-TR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   }
 
+  // yyyy-mm-dd → gg-aa-yyyy
+  function tarihFormatla(val) {
+    if (!val) return '';
+    const [y, m, d] = val.split('-');
+    return d + '-' + m + '-' + y;
+  }
+
   const notEl = document.getElementById('aciklama');
   let kullaniciNot = false;
-
-  notEl.addEventListener('input', function() {
-    kullaniciNot = true;
-  });
+  notEl.addEventListener('input', function () { kullaniciNot = true; });
 
   function hesapla() {
     _gelen = 0;
@@ -496,7 +383,6 @@
     resKalan.textContent = fmt(_kalan);
     resKalan.className = 'rval ' + (_kalan >= 0 ? 'gold' : 'red');
 
-    // Not boşsa veya kullanıcı elle yazmadıysa otomatik güncelle
     if (!kullaniciNot) {
       notEl.value = 'Şuan kasada ' + fmtSade(_kalan) + ' TL var.';
     }
@@ -533,56 +419,60 @@
     document.getElementById('gelen-diger-rows').innerHTML = '';
     document.getElementById('giden-diger-rows').innerHTML = '';
     gelenDigerCount = 0; gidenDigerCount = 0;
+    document.getElementById('mail-info').classList.remove('visible');
     hesapla();
   }
 
+  function kalemListesi(sinif) {
+    const satirlar = [];
+    document.querySelectorAll('.' + sinif).forEach(inp => {
+      const val = parseFloat(inp.value) || 0;
+      if (!val) return;
+      const row = inp.closest('.entry-row, .diger-row');
+      const labelEl = row && row.querySelector('.entry-label');
+      const textEl = row && row.querySelector('input[type="text"]');
+      const label = labelEl ? labelEl.textContent.trim()
+                            : (textEl && textEl.value.trim() ? textEl.value.trim() : 'Diğer');
+      satirlar.push('  ' + label + ': ' + fmtSade(val) + ' TL');
+    });
+    return satirlar;
+  }
+
   function mailGonder() {
-    setTimeout(() => {
-    const tarihRaw = document.getElementById('tarih').value;
-    const tarih = tarihFormatla(tarihRaw);
-
-    const gelenKalemler = [];
-    document.querySelectorAll('.gelen-input').forEach(inp => {
-      const val = parseFloat(inp.value) || 0;
-      if (!val) return;
-      const row = inp.closest('.entry-row, .diger-row');
-      const labelEl = row && row.querySelector('.entry-label');
-      const textEl = row && row.querySelector('input[type="text"]');
-      const label = labelEl ? labelEl.textContent.trim() : (textEl && textEl.value ? textEl.value : 'Diğer');
-      gelenKalemler.push('  ' + label + ': ' + fmtSade(val) + ' TL');
-    });
-
-    const gidenKalemler = [];
-    document.querySelectorAll('.giden-input').forEach(inp => {
-      const val = parseFloat(inp.value) || 0;
-      if (!val) return;
-      const row = inp.closest('.entry-row, .diger-row');
-      const labelEl = row && row.querySelector('.entry-label');
-      const textEl = row && row.querySelector('input[type="text"]');
-      const label = labelEl ? labelEl.textContent.trim() : (textEl && textEl.value ? textEl.value : 'Diğer');
-      gidenKalemler.push('  ' + label + ': ' + fmtSade(val) + ' TL');
-    });
-
+    const tarihHam = tarihInput.value;
+    const tarihGG = tarihFormatla(tarihHam);
     const not = notEl.value.trim();
-    const konu = encodeURIComponent('Mardin Kasa Defteri — ' + tarih);
-    const govde = encodeURIComponent(
-      'MARDİN ASPİLİÇ KASA DEFTERİ\n' +
-      'Tarih: ' + tarih + '\n' +
-      '─────────────────────────\n\n' +
-      '▲ GELEN PARA\n' +
-      (gelenKalemler.length ? gelenKalemler.join('\n') : '  —') + '\n' +
-      'TOPLAM GELİR: ' + fmtSade(_gelen) + ' TL\n\n' +
-      '▼ GİDEN PARA\n' +
-      (gidenKalemler.length ? gidenKalemler.join('\n') : '  —') + '\n' +
-      'TOPLAM GİDER: ' + fmtSade(_giden) + ' TL\n\n' +
-      '─────────────────────────\n' +
-      'KASADAKİ PARA: ' + fmtSade(_kalan) + ' TL\n' +
-      (not ? '\nNOT: ' + not : '')
-    );
 
-    window.location.href = 'mailto:ertektavukculuk@hotmail.com?subject=' + konu + '&body=' + govde;
-  }, 800);
-}
+    const gelenler = kalemListesi('gelen-input');
+    const gidenler = kalemListesi('giden-input');
+
+    // 1) PDF indir
+    window.print();
+
+    // 2) Kısa gecikme sonra mail aç (print dialog kapanmadan açılmasın)
+    setTimeout(function () {
+      const konu = encodeURIComponent('Mardin Kasa Defteri — ' + tarihGG);
+      const govde = encodeURIComponent(
+        'MARDİN BÖLGE KASA DEFTERİ\n' +
+        'Tarih: ' + tarihGG + '\n' +
+        '─────────────────────────────\n\n' +
+        '▲ GELEN PARA\n' +
+        (gelenler.length ? gelenler.join('\n') : '  —') + '\n' +
+        'TOPLAM GELİR: ' + fmtSade(_gelen) + ' TL\n\n' +
+        '▼ GİDEN PARA\n' +
+        (gidenler.length ? gidenler.join('\n') : '  —') + '\n' +
+        'TOPLAM GİDER: ' + fmtSade(_giden) + ' TL\n\n' +
+        '─────────────────────────────\n' +
+        'KASADAKİ PARA: ' + fmtSade(_kalan) + ' TL\n' +
+        (not ? '\nNOT: ' + not : '')
+      );
+
+      window.location.href = 'mailto:' + MAIL_ALICI +
+        '?subject=' + konu + '&body=' + govde;
+
+      document.getElementById('mail-info').classList.add('visible');
+    }, 500);
+  }
 
   function yazdir() { window.print(); }
 
