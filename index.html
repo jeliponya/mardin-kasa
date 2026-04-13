@@ -367,7 +367,7 @@
 <body>
 
 <header>
-  <h1><span>MARDİN BÖLGE</span>KASA DEFTERİ</h1>
+  <h1><span>MARDİN ASPİLİÇ</span>KASA DEFTERİ</h1>
   <div class="date-row">
     <label>TARİH</label>
     <input type="date" id="tarih">
@@ -537,7 +537,11 @@
   }
 
   function mailGonder() {
-    const tarih = document.getElementById('tarih').value;
+    //Önce PDF Oluştur
+    window.print();
+    
+    const tarihRaw = document.getElementById('tarih').value;
+    const tarih = tarihFormatla(tarihRaw);
 
     const gelenKalemler = [];
     document.querySelectorAll('.gelen-input').forEach(inp => {
@@ -564,7 +568,7 @@
     const not = notEl.value.trim();
     const konu = encodeURIComponent('Mardin Kasa Defteri — ' + tarih);
     const govde = encodeURIComponent(
-      'MARDİN BÖLGE KASA DEFTERİ\n' +
+      'MARDİN ASPİLİÇ KASA DEFTERİ\n' +
       'Tarih: ' + tarih + '\n' +
       '─────────────────────────\n\n' +
       '▲ GELEN PARA\n' +
@@ -578,7 +582,7 @@
       (not ? '\nNOT: ' + not : '')
     );
 
-    window.location.href = 'mailto:?subject=' + konu + '&body=' + govde;
+    window.location.href = 'mailto:ertektavukculuk@hotmail.com?subject=' + konu + '&body=' + govde;
   }
 
   function yazdir() { window.print(); }
